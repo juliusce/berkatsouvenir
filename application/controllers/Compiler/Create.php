@@ -18,7 +18,7 @@ class Create extends CI_Controller {
       $db_name = $post['database'];
       //COMPILE FOR CREATE DATABASE
       if ($this->dbforge->create_database($db_name)){
-        echo 'Database created! <br/>Compile for create database '.$db_name.' success <br/> <a href="'.base_url().'compiler/createdb">Click here to back</a>';
+        echo 'Database created! <br/>Compile for create database '.$db_name.' success <br/> <a href="'.base_url().'compiler/create">Click here to back</a>';
       }
     }else{
       $dbs = $this->dbutil->list_databases();
@@ -36,7 +36,7 @@ class Create extends CI_Controller {
       //COMPILE FOR DROP DATABASE
       if ($this->dbforge->drop_database($db_name))
       {
-        echo 'Database deleted!<br/>Compile for drop database '.$db_name.' success <br/> <a href="'.base_url().'compiler/createdb">Click here to back</a>';
+        echo 'Database deleted!<br/>Compile for drop database '.$db_name.' success <br/> <a href="'.base_url().'compiler/create">Click here to back</a>';
       }
     }else{
       echo('Compile for drop database Failed');

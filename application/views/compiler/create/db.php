@@ -1,7 +1,7 @@
 <div class="col-md-4">
   <h3>Database Creator</h3>
   <hr/>
-  <form class="form-inline" action="<?=base_url()?>compiler/createdb" method="post">
+  <form class="form-inline" action="<?=base_url()?>compiler/create" method="post">
     <div class="form-group">
       <label for="inputDatabase">Database</label>
       <input type="text" class="form-control" id="inputDatabase" placeholder="Name For Database" name="database" />
