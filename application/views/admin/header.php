@@ -80,7 +80,7 @@
               <li><a href="<?= base_url()?>Admin/Category/Tambah"><i class="fa fa-plus-square"></i> TAMBAH CATEGORY</a></li>
             </ul>
           </li>
-          <li class="<?php if(!empty($msbc)&&$msbc == 'products'){?>active<?php }?>">
+          <li class="<?php if(!empty($msbc)&&$msbc == 'product'){?>active<?php }?>">
             <a><i class="fa fa-user"></i> PRODUCT</a>
             <ul class="treeview-menu">
               <li><a href="<?= base_url()?>Admin/Product"><i class="fa  fa-list "></i> DAFTAR PRODUCT</a></li>
@@ -91,7 +91,7 @@
       </li>
 
       <!-- TESTIMONIALS MANAGEMENT -->
-      <li class="<?php if(!empty($bc)&&$bc == 'manajemen_testimonial'){?>active<?php }?> treeview">
+      <li class="<?php if(!empty($bc)&&$bc == 'testimonial'){?>active<?php }?> treeview">
         <a href="#"><i class="fa fa-edit"></i> MANEJEMEN TESTIMONIAL<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li class="<?php if(!empty($msbc)&&$msbc == 'daftar_testimonial'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Testimonial"><i class="fa fa-list"></i> DAFTAR TESTIMONIAL</a></li>
@@ -100,11 +100,11 @@
       </li>
 
       <!-- ARTICLES MANAGEMENT -->
-      <li class="<?php if(!empty($bc)&&$bc == 'manajemen_article'){?>active<?php }?> treeview">
+      <li class="<?php if(!empty($bc)&&$bc == 'article'){?>active<?php }?> treeview">
         <a href="#"><i class="fa fa-edit"></i> MANEJEMEN ARTICLE<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li class="<?php if(!empty($msbc)&&$msbc == 'daftar_article'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Article"><i class="fa fa-list"></i> DAFTAR ARTICLE</a></li>
-            <li class="<?php if(!empty($msbc)&&$msbc == 'tambah_article'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Article/Insert"><i class="fa fa-plus-square "></i> BUAT ARTICLE</a></li>
+            <li class="<?php if(!empty($msbc)&&$msbc == 'tambah_article'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Article/Tambah"><i class="fa fa-plus-square "></i> BUAT ARTICLE</a></li>
         </ul>
       </li>
 
