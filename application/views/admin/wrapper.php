@@ -107,7 +107,7 @@
     <!-- Page script -->
     <script type="text/javascript">
       var base_url = '<?= base_url()?>';
-      var uploadURI = '<?=base_url()?>upload';
+      var uploadURI = '<?=base_url()?>admin/upload';
     </script>
     <script src="<?=base_url()?>includes/custom/js/app.js"></script>
     <script src="<?=base_url()?>includes/custom/js/ajaxpost.js"></script>

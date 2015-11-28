@@ -58,14 +58,56 @@
           <span>DASHBOARD</span>
         </a>
       </li>
-      <!-- TRANSAKSI -->
-      <li class="<?php if(!empty($bc)&&$bc == 'slider'){?>active<?php }?> treeview">
+
+      <!-- SLIDER MANAGEMENT -->
+      <li class="<?php if(!empty($bc)&&$bc == 'manajemen_slider'){?>active<?php }?> treeview">
         <a href="#"><i class="fa fa-edit"></i> HOME SLIDER<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li class="<?php if(!empty($msbc)&&$msbc == 'tambah_slider'){?>active<?php }?>"><a href="<?= base_url()?>admin/slider/insert"><i class="fa fa-plus-square "></i> BUAT SLIDER</a></li>
           <li class="<?php if(!empty($msbc)&&$msbc == 'daftar_slider'){?>active<?php }?>"><a href="<?= base_url()?>admin/slider"><i class="fa fa-list"></i> DAFTAR SLIDER</a></li>
         </ul>
       </li>
+
+
+      <!-- PRODUCT MANAGEMENT -->
+      <li class="<?php if(!empty($bc)&&$bc == 'manajemen_product'){?>active<?php }?> treeview">
+        <a href="#"><i class="fa fa-user"></i> MANAJEMEN PRODUK<i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li class="<?php if(!empty($msbc)&&$msbc == 'category'){?>active<?php }?>">
+            <a><i class="fa fa-user"></i> CATEGORY</a>
+            <ul class="treeview-menu">
+              <li><a href="<?= base_url()?>Admin/Category"><i class="fa  fa-list "></i> DAFTAR CATEGORY</a></li>
+              <li><a href="<?= base_url()?>Admin/Category/Tambah"><i class="fa fa-plus-square"></i> TAMBAH CATEGORY</a></li>
+            </ul>
+          </li>
+          <li class="<?php if(!empty($msbc)&&$msbc == 'products'){?>active<?php }?>">
+            <a><i class="fa fa-user"></i> PRODUCT</a>
+            <ul class="treeview-menu">
+              <li><a href="<?= base_url()?>Admin/Product"><i class="fa  fa-list "></i> DAFTAR PRODUCT</a></li>
+              <li><a href="<?= base_url()?>Admin/Product/Tambah"><i class="fa fa-plus-square"></i> TAMBAH PRODUCT</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <!-- TESTIMONIALS MANAGEMENT -->
+      <li class="<?php if(!empty($bc)&&$bc == 'manajemen_testimonial'){?>active<?php }?> treeview">
+        <a href="#"><i class="fa fa-edit"></i> MANEJEMEN TESTIMONIAL<i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li class="<?php if(!empty($msbc)&&$msbc == 'daftar_testimonial'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Testimonial"><i class="fa fa-list"></i> DAFTAR TESTIMONIAL</a></li>
+          <li class="<?php if(!empty($msbc)&&$msbc == 'tambah_testimonial'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Testimonial/Tambah"><i class="fa fa-plus-square "></i> BUAT TESTIMONIAL</a></li>
+        </ul>
+      </li>
+
+      <!-- ARTICLES MANAGEMENT -->
+      <li class="<?php if(!empty($bc)&&$bc == 'manajemen_article'){?>active<?php }?> treeview">
+        <a href="#"><i class="fa fa-edit"></i> MANEJEMEN ARTICLE<i class="fa fa-angle-left pull-right"></i></a>
+        <ul class="treeview-menu">
+          <li class="<?php if(!empty($msbc)&&$msbc == 'daftar_article'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Article"><i class="fa fa-list"></i> DAFTAR ARTICLE</a></li>
+            <li class="<?php if(!empty($msbc)&&$msbc == 'tambah_article'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Article/Insert"><i class="fa fa-plus-square "></i> BUAT ARTICLE</a></li>
+        </ul>
+      </li>
+
     </ul>
   </section>
   <!-- /.sidebar -->
