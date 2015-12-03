@@ -27,6 +27,26 @@
                 <textarea name="description" id="description" placeholder="Tulis Deskripsi Article Anda" class="form-control"></textarea>
               </div>
             </div><!-- /.box-body -->
+            <!-- SEO TAG -->
+            <hr />
+            <h4> SEO TAG (For Google Web Crawler) </h4>
+              <div class="form-group">
+                <label for="seo_title">SEO Title</label>
+                <textarea maxlength="150" id="seo_title" name="seo_title" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="seo_keywords">SEO Keywords</label>
+                <textarea maxlength="150" id="seo_keywords" name="seo_keywords" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="seo_description">SEO Description</label>
+                <textarea maxlength="150" id="seo_description" name="seo_description" class="form-control"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="seo_author">SEO Authors</label>
+                <textarea maxlength="150" id="seo_author" name="seo_author" class="form-control"></textarea>
+              </div>
+            <!-- END OF SEO TAG -->
             <div class="box-footer">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

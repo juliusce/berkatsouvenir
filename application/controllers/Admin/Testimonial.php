@@ -68,6 +68,16 @@ class Testimonial extends CI_Controller {
     if(empty($post)){
       echo('Anda tidak bisa mengakses laman ini');exit;
     }else{
+      $post_seo = array(
+        'seo_title' => $post['seo_title'],
+        'seo_keywords' => $post['seo_keywords'],
+        'seo_description' => $post['seo_description'],
+        'seo_author' => $post['seo_author'],
+      );
+      unset($post['seo_title']);
+      unset($post['seo_keywords']);
+      unset($post['seo_description']);
+      unset($post['seo_author']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Testimonial->validate(TABLE,$post['judul_testimonial']);
       if($exist==1){
@@ -91,10 +101,17 @@ class Testimonial extends CI_Controller {
           if(!$this->upload->do_upload('testimonial_image')){
             $error = $this->upload->display_errors();
             echo $error; exit;
+          }else{
+            $post['testimonial_image'] = 'includes/assets/testimonial/'.$fileName.'.'.$ext;
           }
         }
-        $post['testimonial_image'] = 'includes/assets/testimonial/'.$fileName.'.'.$ext;
-        $this->Model_Transaction->Insert_To_Db($post,TABLE);
+        //UPDATE TO DATABASE
+        $id = $this->Model_Transaction->Insert_To_Db($post,TABLE);
+        if(!empty($id)){
+          $post_seo['seo_page'] = 3;
+          $post_seo['id_seo_page'] = $id;
+          $this->Model_Transaction->Insert_To_Db($post_seo,'seo');
+        }
         echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Testimonial");</script>';
       }
     }

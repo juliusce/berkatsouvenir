@@ -75,6 +75,7 @@ class Category extends CI_Controller {
       } else{
         //INSERT TO DATABASE
         $this->Model_Transaction->Insert_To_Db($post,TABLE);
+
         echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Category");</script>';
       }
     }

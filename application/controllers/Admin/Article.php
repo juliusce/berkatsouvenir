@@ -68,13 +68,28 @@ class Article extends CI_Controller {
     if(empty($post)){
       echo('Anda tidak bisa mengakses laman ini');exit;
     }else{
+      $post_seo = array(
+        'seo_title' => $post['seo_title'],
+        'seo_keywords' => $post['seo_keywords'],
+        'seo_description' => $post['seo_description'],
+        'seo_author' => $post['seo_author'],
+      );
+      unset($post['seo_title']);
+      unset($post['seo_keywords']);
+      unset($post['seo_description']);
+      unset($post['seo_author']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Article->validate(TABLE,$post['judul_article']);
       if($exist==1){
         echo '<script>alert("Testimonial Sudah Ada"); window.location.assign("'.base_url().'Admin/Article");</script>';
       } else{
         //UPDATE TO DATABASE
-        $this->Model_Transaction->Insert_To_Db($post,TABLE);
+        $id = $this->Model_Transaction->Insert_To_Db($post,TABLE);
+        if(!empty($id)){
+          $post_seo['seo_page'] = 2;
+          $post_seo['id_seo_page'] = $id;
+          $this->Model_Transaction->Insert_To_Db($post_seo,'seo');
+        }
         echo '<script>alert("Berhasil Merubah Data"); window.location.assign("'.base_url().'Admin/Article");</script>';
       }
     }

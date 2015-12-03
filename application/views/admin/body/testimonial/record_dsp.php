@@ -36,6 +36,7 @@
                     <tr>
                       <td><?=$val['judul_testimonial']?></td>
                       <td align="center">
+                        <a href="<?=base_url()?>Admin/Seo/Perbarui/3/<?=$val['id']?>" class="btn btn-primary">Perbarui SEO</a>
                         <a href="<?=base_url()?>Admin/Testimonial/Perbarui/<?=$val['id']?>" class="btn btn-primary">Perbarui</a>
                         <a href="<?=base_url()?>Admin/Testimonial/Delete/<?=$val['id']?>" onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data?')" class="btn btn-danger">Hapus</a>
                       </td>

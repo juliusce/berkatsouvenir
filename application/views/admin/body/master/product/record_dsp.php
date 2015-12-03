@@ -39,6 +39,7 @@
                       <td><?=$val['nama_category']?></td>
                       <td><?=$val['nama_product']?></td>
                       <td align="center">
+                        <a href="<?=base_url()?>Admin/Seo/Perbarui/1/<?=$val['id']?>" class="btn btn-primary">Perbarui SEO</a>
                         <a href="<?=base_url()?>Admin/Product/Perbarui/<?=$val['id']?>" class="btn btn-primary">Perbarui</a>
                         <a href="<?=base_url()?>Admin/Product/Delete/<?=$val['id']?>" onclick="return confirm('Apakah Anda Yakin Akan Menghapus Data?')" class="btn btn-danger">Hapus</a>
                       </td>

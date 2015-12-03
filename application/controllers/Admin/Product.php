@@ -17,7 +17,7 @@ class Product extends CI_Controller {
     }
     define('TABLE2','category');
     define('TABLE','product');
-    $this->session->set_userdata(array('breadcrumb'=>'product'));
+    $this->session->set_userdata(array('breadcrumb'=>'manajemen_product'));
   }
 
   public function Index(){
@@ -74,10 +74,20 @@ class Product extends CI_Controller {
     if(empty($post)){
       echo('Anda tidak bisa mengakses laman ini');exit;
     }else{
+      $post_seo = array(
+        'seo_title' => $post['seo_title'],
+        'seo_keywords' => $post['seo_keywords'],
+        'seo_description' => $post['seo_description'],
+        'seo_author' => $post['seo_author'],
+      );
+      unset($post['seo_title']);
+      unset($post['seo_keywords']);
+      unset($post['seo_description']);
+      unset($post['seo_author']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Product->validate(TABLE,$post['nama_product']);
       if($exist==1){
-        echo '<script>alert("Category Sudah Ada"); window.location.assign("'.base_url().'Admin/Product");</script>';
+        echo '<script>alert("Product Sudah Ada"); window.location.assign("'.base_url().'Admin/Product");</script>';
       } else{
         //INSERT TO DATABASE
         $config['upload_path'] = BASEPATH.'../includes/assets/';
@@ -97,6 +107,8 @@ class Product extends CI_Controller {
           if(!$this->upload->do_upload('product_image')){
             $error = $this->upload->display_errors();
             echo $error; exit;
+          }else{
+            $post['product_image'] = 'includes/assets/'.$fileName.'.'.$ext;
           }
         }
         //CHECK FILE IMAGE SECOND
@@ -112,11 +124,16 @@ class Product extends CI_Controller {
           if(!$this->upload->do_upload('product_image2')){
             $error = $this->upload->display_errors();
             echo $error; exit;
+          }else{
+            $post['product_image2'] = 'includes/assets/'.$fileName2.'.'.$ext2;
           }
         }
-        $post['product_image'] = 'includes/assets/'.$fileName.'.'.$ext;
-        $post['product_image2'] = 'includes/assets/'.$fileName2.'.'.$ext2;
-        $this->Model_Transaction->Insert_To_Db($post,TABLE);
+        $id = $this->Model_Transaction->Insert_To_Db($post,TABLE);
+        if(!empty($id)){
+          $post_seo['seo_page'] = 1;
+          $post_seo['id_seo_page'] = $id;
+          $this->Model_Transaction->Insert_To_Db($post_seo,'seo');
+        }
         echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Product");</script>';
       }
     }
