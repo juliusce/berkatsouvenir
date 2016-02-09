@@ -4,17 +4,6 @@ $(function () {
   $(".dataTable").DataTable();
 });
 
-function Autocomplete(){
-    $("#inputKelasTerapi1").select2();
-    $("#inputFaskes1").select2();
-    $("#inputNamaObat1").select2();
-    $("#inputSediaan1").select2();
-    $("#inputKekuatan1").select2();
-    $("#inputSatuan1").select2();
-    $("#inputJurnal1").ckeditor();
-}
-
-
 //FUNCTION JQUERY UPLOAD
 $(function () {
   //Script For Jquery Upload
