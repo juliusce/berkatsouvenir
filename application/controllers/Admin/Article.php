@@ -78,6 +78,7 @@ class Article extends CI_Controller {
       unset($post['seo_keywords']);
       unset($post['seo_description']);
       unset($post['seo_author']);
+      $post['date_created'] = date('Y-m-d');
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Article->validate(TABLE,$post['judul_article']);
       if($exist==1){

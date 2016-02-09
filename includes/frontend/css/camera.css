@@ -6,14 +6,14 @@
 .slider{
     margin:0 0 0;
     height:auto;
-    background: #2f3133 url(../img/patternbg.jpg) 0 0 repeat;
+    	background: #2f3133 url(../../background2.jpg) 0 0 repeat;
 }
 
 
-.camera_wrap img, 
+.camera_wrap img,
 .camera_wrap ol, .camera_wrap ul, .camera_wrap li,
 .camera_wrap table, .camera_wrap tbody, .camera_wrap tfoot, .camera_wrap thead, .camera_wrap tr, .camera_wrap th, .camera_wrap td
-.camera_thumbs_wrap a, .camera_thumbs_wrap img, 
+.camera_thumbs_wrap a, .camera_thumbs_wrap img,
 .camera_thumbs_wrap ol, .camera_thumbs_wrap ul, .camera_thumbs_wrap li,
 .camera_thumbs_wrap table, .camera_thumbs_wrap tbody, .camera_thumbs_wrap tfoot, .camera_thumbs_wrap thead, .camera_thumbs_wrap tr, .camera_thumbs_wrap th, .camera_thumbs_wrap td {
 	background: none;
@@ -52,7 +52,7 @@
 	height: 100%;
 	position: relative;
 	width: 100%;
-	z-index: 1;	
+	z-index: 1;
 }
 .cameraSlide {
 	bottom: 0;
@@ -200,29 +200,29 @@ width:97%
 	.camera_wrap,
 	.slider {
     height:auto;
-} 
-	 
+}
+
 	 }
-	 
+
 	  @media only screen and (min-width: 768px) and (max-width: 979px) {
 		.camera_wrap,.slider  {
             height:auto;
-        } 	  
-		  
+        }
+
  }
- 
- 
+
+
   @media only screen and (max-width: 767px) {
 	.camera_wrap,.slider  {
 	height:auto;
 	min-height:200px}
 	.slider{margin:0 0 0 }
-	
+
 	.camera_caption{display:none !important}
-} 
-	 
-	
+}
+
+
    @media only screen and (max-width: 480px) {
 
-	   
+
 	   }
