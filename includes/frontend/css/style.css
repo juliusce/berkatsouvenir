@@ -1,6 +1,8 @@
 /*------ template stylization ------*/
 body {
 	background: #2f3133 url(../../background.jpg) 0 0 repeat;
+
+	overflow-x: hidden;
 }
 /*----------- Back to top --------------*/
 #toTop {
@@ -197,7 +199,7 @@ header {
 	margin: 0;
 	text-align: center;
 	padding: 0;
-	margin: 68px auto 60px;
+	/*margin: 68px auto 60px;*/
 }
 .navbar-brand_ img {
 	max-width: 100%;
@@ -238,7 +240,6 @@ header {
 	padding: 0 26px 0 27px;
 	position: relative;
 	zoom: 1;
-	background: url(../img/bullet1.png) no-repeat left center;
 }
 .tm_navbar .nav li a {
 	text-decoration: none;
@@ -558,7 +559,7 @@ header {
 	font-size: 24px;
 	line-height: 26px;
 	font-weight: normal;
-	color: #adadad;
+	color: #EE3B7C;
 	margin-bottom: 17px;
 }
 .chef figure {
@@ -1355,7 +1356,7 @@ address .info p:first-child {
 /*--- content end ------*/
 /*--------- footer --------- */
 footer {
-	padding: 64px 0;
+	padding: 30px 0;
 	background: url("../../footer.png") top center repeat-x;
 }
 /*--------------social----------------*/
@@ -1404,7 +1405,7 @@ footer {
 	font-size: 16px;
 	line-height: 22px;
 	font-weight: normal;
-	color: #f2eee5;
+	color: #EE3B7C;
 }
 .footerpriv a {
 	font-family: 'Georgia', serif;

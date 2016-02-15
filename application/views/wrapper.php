@@ -42,13 +42,21 @@
 
 <header id="header" style="position:relative">
       <div class="container">
-        <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img style="margin-bottom:10%" alt="Grill point" src="<?=base_url()?>includes/logo.png"></a></h1>
+        <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img style="margin-bottom:-1%" alt="Grill point" src="<?=base_url()?>includes/logo.png"></a></h1>
       </div>
-        <img id="imageTest" src="<?=base_url()?>includes/renda.png" style="max-width:6163px !important;" />
+        <img id="imageTest" src="<?=base_url()?>includes/renda.png" style="    max-width: 6163px;
+    max-height: 100%;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 96%;
+    z-index:30" />
       <div class="menuheader">
           <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
-                <ul class="nav sf-menu">
+                <ul class="nav sf-menu" style="list-style-type: none;">
                   <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a href="<?=base_url()?>">home</a></li>
                   <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a href="<?=base_url()?>category">product</a></li>
                   <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a href="<?=base_url()?>article">articles</a></li>
@@ -73,10 +81,10 @@
                 </ul>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.html"><img src="<?=base_url()?>includes/frontend/img/logofooter.png" alt=""></a>
+                <a class="smalllogo2 logo" href="index.html"><img src="<?=base_url()?>includes/logofooter.png" alt=""></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <p class="footerpriv">&copy; 2013 &bull; <a class="privacylink" href="index-5.html">Privacy policy</a>More  at <a rel="nofollow" href="http://www.templatemonster.com/category.php?category=0&type=1" target="_blank">TemplateMonster.com</a></p>
+                <p class="footerpriv">&copy; <?=date('Y')?> &bull; Copyright Berkat Souvenir <br/> Created By : Julius Cesario</p>
             </div>
         </div>
     </div>
