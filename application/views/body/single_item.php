@@ -1,4 +1,3 @@
-
 <!-- Add mousewheel plugin (this is optional) -->
 <script type="text/javascript" src="<?= base_url()?>includes/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 
