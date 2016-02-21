@@ -127,6 +127,12 @@
         });
       });
     </script>
+    <script type="text/javascript">
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace( 'description' );
+        CKEDITOR.instances.editor1.document.getBody().getText();
+    </script>
     <!--<script>
     $(document).ready(function(){
 

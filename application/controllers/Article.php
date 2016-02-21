@@ -18,6 +18,9 @@ class Article extends CI_Controller {
 		}
 		$group_article = $this->Model_Get_Article->Get_By_Param('article',1,8,0,0,'date_created');
 		//print_r($article);exit;
+		foreach($article as $key => $row){
+			$article[$key]['non_tags'] = character_limiter(strip_tags($row['description'],10));
+		}
 		$view_data['article'] = $article;
 		$view_data['group_article'] = $group_article;
     $view_data['title'] = 'Article';

@@ -95,15 +95,16 @@ class Testimonial extends CI_Controller {
           $ext = pathinfo($filename, PATHINFO_EXTENSION);
           //FOR FILE NAME
           $fileName = str_replace(' ','_',strtolower($post['judul_testimonial']));
+          $fileName2 = str_replace('&','',$fileName);
           //FOR UPLOAD
-          $config['file_name'] = $fileName;
+          $config['file_name'] = $fileName2;
           $this->upload->initialize($config);
 
           if(!$this->upload->do_upload('testimonial_image')){
             $error = $this->upload->display_errors();
             echo $error; exit;
           }else{
-            $post['testimonial_image'] = 'includes/assets/testimonial/'.$fileName.'.'.$ext;
+            $post['testimonial_image'] = 'includes/assets/testimonial/'.$fileName2.'.'.$ext;
           }
         }
         //UPDATE TO DATABASE
@@ -129,7 +130,7 @@ class Testimonial extends CI_Controller {
       unset($post['id']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Testimonial->validate(TABLE,$post['judul_testimonial']);
-      if(!empty($exist) && ($exist['id']!=$id)){
+      if(!empty($exist) && ($exist!=$id)){
         echo '<script>alert("Product Sudah Ada"); window.location.assign("'.base_url().'Admin/Testimonial");</script>';
       } else{
         //UPDATE TO DATABASE
@@ -143,15 +144,16 @@ class Testimonial extends CI_Controller {
           $ext = pathinfo($filename, PATHINFO_EXTENSION);
           //FOR FILE NAME
           $fileName = str_replace(' ','_',strtolower($post['judul_testimonial']));
+          $fileName2 = str_replace('&','',$fileName);
           //FOR UPLOAD
-          $config['file_name'] = $fileName;
+          $config['file_name'] = $fileName2;
           $this->upload->initialize($config);
 
           if(!$this->upload->do_upload('testimonial_image')){
             $error = $this->upload->display_errors();
             echo $error; exit;
           }else{
-            $post['testimonial_image'] = 'includes/assets/testimonial/'.$fileName.'.'.$ext;
+            $post['testimonial_image'] = 'includes/assets/testimonial/'.$fileName2.'.'.$ext;
           }
         }else{
           unset($post['testimonial_image']);

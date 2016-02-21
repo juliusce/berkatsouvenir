@@ -57,11 +57,11 @@
           <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
                 <ul class="nav sf-menu" style="list-style-type: none;">
-                  <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a href="<?=base_url()?>">home</a></li>
-                  <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a href="<?=base_url()?>category">product</a></li>
-                  <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a href="<?=base_url()?>article">articles</a></li>
-                  <li <?php if($title == 'Testimonial'){?>class="active"<?php } ?>><a href="<?=base_url()?>testimonial">testimonials</a></li>
-                  <li <?php if($title == 'Contact'){?>class="active"<?php } ?>><a href="<?=base_url()?>contact">contact</a></li>
+                  <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a href="<?=base_url()?>">HOME</a></li>
+                  <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a href="<?=base_url()?>category">PRODUCT</a></li>
+                  <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a href="<?=base_url()?>article">ARTICLES</a></li>
+                  <li <?php if($title == 'Testimonial'){?>class="active"<?php } ?>><a href="<?=base_url()?>testimonial">TESTIMONIALS</a></li>
+                  <li <?php if($title == 'Contact'){?>class="active"<?php } ?>><a href="<?=base_url()?>contact">CONTACT</a></li>
                 </ul>
             </nav>
           </div>
@@ -81,10 +81,10 @@
                 </ul>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">
-                <a class="smalllogo2 logo" href="index.html"><img src="<?=base_url()?>includes/logofooter.png" alt=""></a>
+                <a class="smalllogo2 logo" href="<?=base_url()?>"><img style="margin-top: 5%;" src="<?=base_url()?>includes/logofooter.png" alt=""></a>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
-                <p class="footerpriv">&copy; <?=date('Y')?> &bull; Copyright Berkat Souvenir <br/> Created By : Julius Cesario</p>
+                <p class="footerpriv" style="margin-top: 9%;">&copy; <?=date('Y')?> &bull; Copyright Berkat Souvenir <br/> Created By : Julius Cesario</p>
             </div>
         </div>
     </div>

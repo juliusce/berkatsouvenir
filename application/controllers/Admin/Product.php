@@ -87,7 +87,7 @@ class Product extends CI_Controller {
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Product->validate(TABLE,$post['nama_product']);
       if($exist==1){
-        echo '<script>alert("Product Sudah Ada"); window.location.assign("'.base_url().'Admin/Product");</script>';
+        echo '<script>alert("Product Sudah Ada"); window.location.assign("'.base_url().'Admin/Product/Tambah");</script>';
       } else{
         //INSERT TO DATABASE
         $config['upload_path'] = BASEPATH.'../includes/assets/';
@@ -134,7 +134,7 @@ class Product extends CI_Controller {
           $post_seo['id_seo_page'] = $id;
           $this->Model_Transaction->Insert_To_Db($post_seo,'seo');
         }
-        echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Product");</script>';
+        echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Product/Tambah");</script>';
       }
     }
   }
@@ -150,8 +150,9 @@ class Product extends CI_Controller {
       unset($post['id']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Product->validate(TABLE,$post['nama_product']);
-      if(!empty($exist) && ($exist['id']!=$id)){
-        echo '<script>alert("Product Sudah Ada"); window.location.assign("'.base_url().'Admin/Product");</script>';
+      //print_r($exist);exit;
+      if(!empty($exist) && ($exist!=$id)){
+        echo '<script>alert("Product Sudah Ada"); window.location.assign("'.base_url().'Admin/Product/Perbarui/'.$id.'");</script>';
       } else{
         //UPDATE TO DATABASE
         $config['upload_path'] = BASEPATH.'../includes/assets/';
@@ -199,7 +200,7 @@ class Product extends CI_Controller {
 
         //UPDATE TO DATABASE
         $this->Model_Transaction->Update_To_Db($post,TABLE,'id',$id);
-        echo '<script>alert("Berhasil Merubah Data"); window.location.assign("'.base_url().'Admin/Product");</script>';
+        echo '<script>alert("Berhasil Merubah Data"); window.location.assign("'.base_url().'Admin/Product/Perbarui/'.$id.'");</script>';
       }
     }
   }

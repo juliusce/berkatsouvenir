@@ -12,4 +12,11 @@ class Contact extends CI_Controller {
 		$view_data['body'] = 'body/contact';
 		$this->load->view('wrapper',$view_data);
 	}
+
+	public function sent_inquiry(){
+		$post = $this->input->post();
+		if(!empty($post)){
+			print_r($post);exit;
+		}
+	}
 }

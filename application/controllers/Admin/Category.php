@@ -71,12 +71,12 @@ class Category extends CI_Controller {
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Category->validate(TABLE,$post['nama_category']);
       if($exist==1){
-        echo '<script>alert("Category Sudah Ada"); window.location.assign("'.base_url().'Admin/Category");</script>';
+        echo '<script>alert("Category Sudah Ada"); window.location.assign("'.base_url().'Admin/Category/Tambah");</script>';
       } else{
         //INSERT TO DATABASE
         $this->Model_Transaction->Insert_To_Db($post,TABLE);
 
-        echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Category");</script>';
+        echo '<script>alert("Berhasil Menambahkan Data"); window.location.assign("'.base_url().'Admin/Category/Tambah");</script>';
       }
     }
   }
@@ -92,12 +92,12 @@ class Category extends CI_Controller {
       unset($post['id']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Category->validate(TABLE,$post['nama_category']);
-      if(!empty($exist) && ($exist['id']!=$id)){
-        echo '<script>alert("Category Sudah Ada"); window.location.assign("'.base_url().'Admin/Category");</script>';
+      if(!empty($exist) && ($exist!=$id)){
+        echo '<script>alert("Category Sudah Ada"); window.location.assign("'.base_url().'Admin/Category/Perbarui/'.$id.'");</script>';
       } else{
         //INSERT TO DATABASE
         $this->Model_Transaction->Update_To_Db($post,TABLE,'id',$id);
-        echo '<script>alert("Berhasil Merubah Data"); window.location.assign("'.base_url().'Admin/Category");</script>';
+        echo '<script>alert("Berhasil Merubah Data"); window.location.assign("'.base_url().'Admin/Category/Perbarui/'.$id.'");</script>';
       }
     }
   }

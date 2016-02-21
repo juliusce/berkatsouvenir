@@ -12,7 +12,7 @@
                   <?php foreach($testimonial as $key) {?>
                     <h3><a href="<?=base_url()?>single_testimonial/<?=$key['id']?>"><?=$key['judul_testimonial']?></a></h3>
                     <img src="<?=base_url()?><?=$key['testimonial_image']?>" />
-                    <p><?=$key['description']?></p>
+                    <p style="text-align:justify"><?=$key['non_tags']?> <a href="<?=base_url()?>single_testimonial/<?=$key['id']?>">Read More >></a></p>
                   <?php } ?>
                 </div>
               </div>

@@ -22,6 +22,10 @@
                 <input type="text" class="form-control" id="nama_product" name="nama_product" placeholder="Nama Product yang diinginkan">
               </div>
               <div class="form-group">
+                <input id="promo" type="checkbox" name="promo" value="1"><label for="promo">Promo
+                </label>
+              </div>
+              <div class="form-group">
                 <label for="nama_category">Nama Category</label>
                 <select id="nama_category" name="nama_category" class="form-control">
                   <?php foreach($data as $row) {?>

@@ -46,7 +46,7 @@ border: 5px solid #DBCEA2;
                     </div>
                     <hr/>
                     <div class="row" style="margin-left:auto; margin-right:auto">
-                      <p><?=$item['description']?></p>
+                      <p style="text-align:justify"><?=$item['description']?></p>
                     </div>
                 </div>
 

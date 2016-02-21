@@ -107,7 +107,7 @@ class Article extends CI_Controller {
       unset($post['id']);
       //VALIDATE TO DATABASE
       $exist = $this->Model_Get_Article->validate(TABLE,$post['judul_article']);
-      if(!empty($exist) && ($exist['id']!=$id)){
+      if(!empty($exist) && ($exist!=$id)){
         echo '<script>alert("Article Sudah Ada"); window.location.assign("'.base_url().'Admin/Article");</script>';
       } else{
 

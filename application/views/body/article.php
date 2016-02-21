@@ -10,8 +10,8 @@
               <div class="row links">
   		          <div class="col-lg-8 col-md-8 col-sm-8">
                   <?php foreach($article as $key) {?>
-                    <h3><a class="btn-link4" href="<?=base_url()?>single_article/<?=$key['id']?>"><?=$key['judul_article']?></a></h3>
-                    <p><?=$key['description']?></p>
+                    <h3><a href="<?=base_url()?>single_article/<?=$key['id']?>"><?=$key['judul_article']?></a></h3>
+                    <p style="text-align:justify"><?=$key['non_tags']?> <a href="<?=base_url()?>single_article/<?=$key['id']?>">Read More >></a></p>
                   <?php } ?>
                 </div>
               </div>

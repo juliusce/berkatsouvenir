@@ -18,6 +18,10 @@ class Testimonial extends CI_Controller {
 		}
 		$group_testi   = $this->Model_Get_Testimonial->Get_By_Param('testimonial',1,8,0,0,'date_created');
 		//print_r($article);exit;
+		foreach($testimonial as $key => $row){
+			$testimonial[$key]['non_tags'] = character_limiter(strip_tags($row['description'],10));
+		}
+		//print_r($testimonial);exit;
 		$view_data['testimonial'] = $testimonial;
 		$view_data['group_testi'] = $group_testi;
     $view_data['title'] = 'Testimonial';

@@ -176,16 +176,11 @@ function listFilesOnServer () {
                     <a href="#" class="btn-link btn-link2">read more<span></span></a>
                 </div>
                 <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 row4_col">
-                    <h2>Latest Services</h2>
+                    <h2>Latest News</h2>
                     <ul class="list2">
-                        <li><a href="#">muygasa kausyse</a></li>
-                        <li><a href="#">nuyatsas lasras batsas </a></li>
-                        <li><a href="#">kiaustyas</a></li>
-                        <li><a href="#">batresa ksate</a></li>
-                        <li><a href="#">Grerhasa mero</a></li>
-                        <li><a href="#">Lanytadas nyats</a></li>
-                        <li><a href="#">nuyatsas lasras batsas</a></li>
-                        <li><a href="#">batresa </a></li>
+                        <?php foreach($latest as $key => $row){?>
+                        <li><a href="<?=base_url()?><?=$row['type']?><?=$row['id']?>"><?=$row['name']?></a></li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 locations row4_col">
