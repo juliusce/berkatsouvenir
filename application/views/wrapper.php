@@ -11,7 +11,7 @@
     border: 5px solid #DBCEA2;
     }
     </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" href="<?=base_url()?>includes/icon.png" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <meta name="format-detection" content = "telephone=no" />
@@ -50,7 +50,7 @@
 
 <header id="header" style="position:relative">
       <div class="container">
-        <h1 class="navbar-brand navbar-brand_"><a href="index.html"><img style="margin-bottom:-1%" alt="Grill point" src="<?=base_url()?>includes/logo.png"></a></h1>
+        <h1 class="navbar-brand navbar-brand_"><a href="<?=base_url()?>"><img style="margin-bottom:-1%" alt="Grill point" src="<?=base_url()?>includes/logo.png"></a></h1>
       </div>
         <img id="imageTest" src="<?=base_url()?>includes/renda.png" style="    max-width: 6163px;
     max-height: 100%;
@@ -65,11 +65,11 @@
           <div class="container">
             <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
                 <ul class="nav sf-menu" style="list-style-type: none;">
-                  <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a href="<?=base_url()?>">HOME</a></li>
-                  <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a href="<?=base_url()?>category">PRODUCT</a></li>
-                  <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a href="<?=base_url()?>article">ARTICLES</a></li>
-                  <li <?php if($title == 'Testimonial'){?>class="active"<?php } ?>><a href="<?=base_url()?>testimonial">TESTIMONIALS</a></li>
-                  <li <?php if($title == 'Contact'){?>class="active"<?php } ?>><a href="<?=base_url()?>contact">CONTACT</a></li>
+                  <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>">HOME</a></li>
+                  <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>category">PRODUCT</a></li>
+                  <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>article">ARTICLES</a></li>
+                  <li <?php if($title == 'Testimonial'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>testimonial">TESTIMONIALS</a></li>
+                  <li <?php if($title == 'Contact'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>contact">CONTACT</a></li>
                 </ul>
             </nav>
           </div>
