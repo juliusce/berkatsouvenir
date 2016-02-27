@@ -5,17 +5,18 @@
         <div class="container">
                  <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 address">
-                        <h2>Postal Address</h2>
+                        <h2>Our Contact</h2>
                         <address>
                             <div class="info">
-                                <strong>8901 Marmora Road, Glasgow, D04 89GR.</strong>
-                            	<p><span>Telephone:</span> +1 959 603 6035</p>
-                            	<p><span>LINE:</span> +1 504 889 9898</p>
-                              <p><span>Whatsapp:</span> +1 504 889 9898</p>
-                              <p><span>Facebook:</span> +1 504 889 9898</p>
-                              <p><span>Google+:</span> +1 504 889 9898</p>
-                              <p><span>Instagram:</span> +1 504 889 9898</p>
-                            	<p>E-mail: <a href="mailto:#">mail@demolink.org</a></p>
+                            	<p><span>Telephone:</span> +62 812 8997 9786</p>
+                              <p><span></span> +62 838 9779 7667</p>
+                            	<p><span>LINE:</span> vieberkatsouvenir</p>
+                              <p><span>WA:</span> +62 812 8997 9786</p>
+                              <p><span></span> +62 838 9779 7667</p>
+                              <p><span>Facebook:</span> Berkat Souvenir Shop</p>
+                              <p><span>Google+:</span> Berkatsouvenir@gmail.com</p>
+                              <p><span>Instagram:</span> @BerkatSouvenir</p>
+                            	<p><span>E-mail:</span>  <a href="mailto:berkatsouvenir@yahoo.com">berkatsouvenir@yahoo.com</a></p>
                             </div>
                         </address>
 

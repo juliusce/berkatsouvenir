@@ -13,6 +13,7 @@ class Welcome extends CI_Controller {
 		$view_data['title'] = 'Home';
 		$view_data['body'] = 'body/home';
 		$view_data['promo'] = $this->Model_Home->Parameter_Select('product','promo',1,3);
+		$view_data['new'] = $this->Model_Home->Parameter_Select('product','promo',1,3);
 		$latest_product = $this->Model_Home->Ordered_Select('product',2);
 		$latest_article = $this->Model_Home->Ordered_Select('article',2);
 		$latest_testi = $this->Model_Home->Ordered_Select('testimonial',2);

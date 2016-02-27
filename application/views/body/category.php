@@ -121,7 +121,7 @@
                   <div id="container" class="clearfix">
                     <?php foreach($product as $key){?>
                     <div class="element transition <?=$key['nama_category']?>" data-category="transition">
-                    	<a href="<?=base_url()?>single_item/<?=$key['id']?>" class="thumb" target="_blank"><img src="<?=base_url()?><?=$key['product_image']?>" alt="Gambar tidak tersedia"></a><hr/><span class="description"><?=$key['nama_product']?></span>
+                    	<a href="<?=base_url()?>single_item/<?=$key['id']?>" class="thumb"><img class="border-box" src="<?=base_url()?><?=$key['product_image']?>" alt="Gambar tidak tersedia"></a><hr/><span class="description"><?=$key['nama_product']?></span>
                     </div>
                     <?php } ?>
 		       </div>

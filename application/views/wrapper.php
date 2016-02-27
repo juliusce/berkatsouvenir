@@ -3,8 +3,16 @@
 <head>
     <title>Berkat Souvenir | <?=$title?></title>
     <meta charset="utf-8">
+    <style>
+    .border-box{
+      border-radius: 46px 46px 46px 46px;
+    -moz-border-radius: 46px 46px 46px 46px;
+    -webkit-border-radius: 46px 46px 46px 46px;
+    border: 5px solid #DBCEA2;
+    }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?=base_url()?>includes/icon.png" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <meta name="format-detection" content = "telephone=no" />
     <meta name="title" content = "telephone=no" />
@@ -74,10 +82,8 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-4 footercol">
                 <ul class="social_icons clearfix">
-                     <li><a href="#"><img src="<?=base_url()?>includes/frontend/img/follow_icon1.png" alt=""></a></li>
-                     <li><a href="#"><img src="<?=base_url()?>includes/frontend/img/follow_icon2.png" alt=""></a></li>
-                     <li><a href="#"><img src="<?=base_url()?>includes/frontend/img/follow_icon3.png" alt=""></a></li>
-                     <li><a href="#"><img src="<?=base_url()?>includes/frontend/img/follow_icon4.png" alt=""></a></li>
+                     <li><a href="https://www.facebook.com/Berkat-Souvenir-Gelas-126612090715375" target="_blank"><img src="<?=base_url()?>includes/frontend/img/follow_icon1.png" alt=""></a></li>
+                     <li><a href="https://plus.google.com/110715915313785200266" target="_blank"><img src="<?=base_url()?>includes/frontend/img/follow_icon2.png" alt=""></a></li>
                 </ul>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 footerlogo footercol">

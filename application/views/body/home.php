@@ -26,83 +26,53 @@ function listFilesOnServer () {
     <!--==============================slider=================================-->
     <div class="slider">
         <div class="camera_wrap">
-          <div data-src="http://localhost/berkatsouvenir/uploads/slider/picture2.jpg"></div><div data-src="http://localhost/berkatsouvenir/uploads/slider/picture1.jpg"></div><div data-src="http://localhost/berkatsouvenir/uploads/slider/picture3.jpg"></div><div data-src="http://localhost/berkatsouvenir/uploads/slider/picture4.jpg"></div>
+          <div data-src="http://localhost/berkatsouvenir/includes/frontend/slider/1.jpg"></div><div data-src="http://localhost/berkatsouvenir/includes/frontend/slider/2.jpg"></div>
         </div>
     </div>
     <!--==============================row1=================================-->
     <div class="row_1">
         <div class="container">
-            <p class="title1">Welcome Good People!</p>
-            <p class="title2">In this special moment in your life... let present a special gift for your special guest.. and make your special day memorable..</p>
+            <p class="title1">Welcome to berkatsouvenir.com</p>
+            <p class="title2">Butuh SOUVENIR MURAH dan BERKUALITAS ? disini tempatnya !!! Jadikan momen spesial anda menjadi KENANGAN yang terindah dengan memilih SOUVENIR yang terbaik dengan harga yang terjangkau</p>
         </div>
     </div>
-    <hr />
     <!--==============================row2=================================-->
     <div class="row_2">
         <!-- END OF CONTAINER FOR PROMO ITEMS -->
         <div class="container">
             <div class="row">
                 <p class="title1">Promo</p>
-                <p class="title2">Still a promo stuff on our store, for your beloved guest..</p>
+                <p class="title2">Dapatkan PROMO SOUVENIR MURAH dan BERKUALITAS hanya di berkatsouvenir.com</p>
                 <ul class="list1">
+                    <?php foreach($promo as $key1 =>$row1){ ?>
                     <li class="col-lg-4 col-md-4 col-sm-4 listbox1">
                         <div class="box1">
-                            <a href="#">
-                                <figure><img src="<?=base_url()?>includes/frontend/img/page1_img1.jpg" alt=""></figure>
-                                <p>Women</p>
+                            <a href="<?=base_url()?>single_item<?=$row1['id']?>">
+                                <figure><img class="border-box" src="<?=base_url()?><?=$row1['product_image']?>" alt=""></figure>
+                                <p><?=$row1['nama_product']?></p>
                             </a>
                         </div>
                     </li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox2">
-                        <div class="box2">
-                            <a href="#">
-                                <p>Men</p>
-                                <figure><img src="<?=base_url()?>includes/frontend/img/page1_img2.jpg" alt=""></figure>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox3">
-                        <div class="box3">
-                            <a href="#">
-                                <figure><img src="<?=base_url()?>includes/frontend/img/page1_img3.jpg" alt=""></figure>
-                                <p>Children</p>
-                            </a>
-                        </div>
-                    </li>
+                    <?php } ?>
                 </ul>
             </div>
             <p class="title2"><a class="btn-link btn-link2" href="#">More for promo<span></span></a></p>
         <!-- END OF CONTAINER FOR PROMO ITEMS -->
-        <hr />
         <!-- START OF CONTAINER FOR NEW ARRIVAL ITEMS -->
             <div class="row">
                 <p class="title1">New Arrival</p>
-                <p class="title2">New arrival stuff on our store, you can choose this new one or that one..</p>
+                <p class="title2">BERKAT SOUVENIR menyediakan berbagai jenis SOUVENIR Untuk PROMOSI , WEDDING , DAN LAIN NYA dengan KUALITAS CETAKAN YANG BAIK.</p>
                 <ul class="list1">
+                    <?php foreach($promo as $key1 =>$row1){ ?>
                     <li class="col-lg-4 col-md-4 col-sm-4 listbox1">
                         <div class="box1">
-                            <a href="#">
-                                <figure><img src="<?=base_url()?>includes/frontend/img/page1_img1.jpg" alt=""></figure>
-                                <p>Women</p>
+                            <a href="<?=base_url()?>single_item<?=$row1['id']?>">
+                                <figure><img class="border-box" src="<?=base_url()?><?=$row1['product_image']?>" alt=""></figure>
+                                <p><?=$row1['nama_product']?></p>
                             </a>
                         </div>
                     </li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox2">
-                        <div class="box2">
-                            <a href="#">
-                                <p>Men</p>
-                                <figure><img src="<?=base_url()?>includes/frontend/img/page1_img2.jpg" alt=""></figure>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="col-lg-4 col-md-4 col-sm-4 listbox3">
-                        <div class="box3">
-                            <a href="#">
-                                <figure><img src="<?=base_url()?>includes/frontend/img/page1_img3.jpg" alt=""></figure>
-                                <p>Children</p>
-                            </a>
-                        </div>
-                    </li>
+                    <?php } ?>
                 </ul>
             </div>
             <p class="title2"><a class="btn-link btn-link2" href="#">More for new arrival<span></span></a></p>
@@ -119,10 +89,7 @@ function listFilesOnServer () {
                         <div class="box4">
                             <figure><img src="<?=base_url()?>includes/frontend/img/page1_img4.jpg" alt=""></figure>
                             <div class="info1 maxheight">
-                                <p class="list3title1">Nature</p>
-                                <p class="list3title2">Migytafsas deuauyt asares</p>
-                                <p class="list3title3">Kictaesaert asetyertya aset aplicibrdedas.</p>
-                                <a href="#" class="btn-link btn-link1">learn more<span></span></a>
+                                <p class="list3title1">1. Pilih jenis produk yang kamu minati.</p>
                             </div>
                         </div>
                     </li>
@@ -130,10 +97,7 @@ function listFilesOnServer () {
                         <div class="box4">
                             <figure><img src="<?=base_url()?>includes/frontend/img/page1_img5.jpg" alt=""></figure>
                             <div class="info1 maxheight">
-                                <p class="list3title1">Cities</p>
-                                <p class="list3title2">Btreasas lisemeyta siqades</p>
-                                <p class="list3title3">Kictaesaert asetyertya aset aplicibrdedas.</p>
-                                <a href="#" class="btn-link btn-link1">learn more<span></span></a>
+                                <p class="list3title1">2. Kirim detail produk, jumlah/ quantity, kata2 dan design yang kamu minati ke email kami.( design hanya khusus untuk SOUVENIR GELAS & MUG ) </p>
                             </div>
                         </div>
                     </li>
@@ -141,10 +105,7 @@ function listFilesOnServer () {
                         <div class="box4">
                             <figure><img src="<?=base_url()?>includes/frontend/img/page1_img6.jpg" alt=""></figure>
                             <div class="info1 maxheight">
-                                <p class="list3title1">Portraits</p>
-                                <p class="list3title2">Dolore nuyfasa kerytertas</p>
-                                <p class="list3title3">Kictaesaert asetyertya aset aplicibrdedas.</p>
-                                <a href="#" class="btn-link btn-link1">learn more<span></span></a>
+                                <p class="list3title1">3. Kami akan segera mereply email kamu disertai detail pembayaran dan ongkos kirim secepatnya</p>
                             </div>
                         </div>
                     </li>
@@ -152,10 +113,7 @@ function listFilesOnServer () {
                         <div class="box4">
                             <figure><img src="<?=base_url()?>includes/frontend/img/page1_img7.jpg" alt=""></figure>
                             <div class="info1 maxheight">
-                                <p class="list3title1">Fashion</p>
-                                <p class="list3title2">Fertyuasa mietyas lteasas</p>
-                                <p class="list3title3">Kictaesaert asetyertya aset aplicibrdedas.</p>
-                                <a href="#" class="btn-link btn-link1">learn more<span></span></a>
+                                <p class="list3title1">4. Segera lakukan pembayaran yang telah di sepakati dan dikonfirmasi kepada kami. Produk yang kamu pesan akan selesai kurang lebih dalam waktu 21 hari kerja.( DILUAR ACC DESAIN )</p>
                             </div>
                         </div>
                     </li>
@@ -168,12 +126,11 @@ function listFilesOnServer () {
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 chef row4_col">
-                    <h2>About Me</h2>
+                    <h2>About Us</h2>
                     <figure><img src="<?=base_url()?>includes/frontend/img/page1_img8.jpg" alt=""></figure>
-                    <p class="title3">Vivamus eget</p>
-                    <p>Vitaesaert asetyertya asetrde maeciegast nieri vrtye remiad.Molirnatur aut oditaut. onsq ntmagni dolores eo qui ratione. </p>
-                    <p class="m_bot1">Nasgaesaert asetyertya asetrde maeciegast nieriti vrtye remiades.Molirnatur aut oditaut.</p>
-                    <a href="#" class="btn-link btn-link2">read more<span></span></a>
+                    <p class="title3">Berkat Souvenir</p>
+                    <p style="text-align:justify">BERKAT SOUVENIR dirintis sejak Tahun 2011 yang berpusat di Jembatan Lima, JAKARTA BARAT.<br/>BERKAT SOUVENIR menyediakan berbagai jenis SOUVENIR BERKUALITAS dengan HARGA MURAH untuk memenuhi kebutuhan SOUVENIR CUSTOMER kami.<br/>Diawali dari SOUVENIR GELAS & MUG untuk kebutuhan PROMOSI & WEDDING , kini BERKAT SOUVENIR terus BERKEMBANG untuk menyediakan SOUVENIR LAIN NYA bagi para CUSTOMER kami.<br></p>
+                    <p class="m_bot1">Kepuasan ANDA adalah kebanggaan kami.</p>
                 </div>
                 <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 row4_col">
                     <h2>Latest News</h2>
@@ -184,11 +141,9 @@ function listFilesOnServer () {
                     </ul>
                 </div>
                 <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-3 col-md-3 col-sm-3 locations row4_col">
-                    <h2>Locations</h2>
-                    <figure><img src="<?=base_url()?>includes/frontend/img/smalllogo1.png" alt=""></figure>
-                    <p class="title4">28 Jackson Blvd Ste 1020<br>Chicago<br>IL 60604-2340</p>
+                    <figure><img src="<?=base_url()?>includes/logofooter.png" alt=""></figure>
                     <hr class="line1">
-                    <a href="#" class="btn-link btn-link3"><span></span>info@demolink.org</a>
+                    <a href="mailto:berkatsouvenir@yahoo.com" class="btn-link btn-link3"><span></span>berkatsouvenir@yahoo.com</a>
                 </div>
             </div>
         </div>

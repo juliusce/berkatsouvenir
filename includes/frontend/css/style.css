@@ -446,6 +446,9 @@ header {
 }
 .box1 {
 	background: #eb5368;
+  border-radius: 46px 46px 46px 46px;
+  -moz-border-radius: 46px 46px 46px 46px;
+  -webkit-border-radius: 46px 46px 46px 46px;
 }
 .box1 figure {
 	width: 100%;
@@ -522,7 +525,7 @@ header {
 	padding-right: 10px;
 }
 .list3title1 {
-	font-size: 26px;
+	font-size: 17px;
 	line-height: 28px;
 	font-weight: normal;
 	color: #4e4134;
@@ -545,7 +548,7 @@ header {
 }
 /*------------chef------------*/
 .title3 {
-	font-size: 24px;
+	font-size: 22px;
 	line-height: 26px;
 	font-weight: normal;
 	color: #EE3B7C;
@@ -1032,13 +1035,13 @@ address .info p:first-child {
 	font-size: 15px;
 	line-height: 22px;
 	font-weight: normal;
-	color: #adadad;
+	color: #EE3B7C;
 }
 .info {
 	font-size: 15px;
 	line-height: 22px;
 	font-weight: normal;
-	color: #adadad;
+	color: #EE3B7C;
 }
 .padding_top1 {
 	padding-top: 31px;
@@ -1047,27 +1050,27 @@ address .info p:first-child {
 	font-size: 15px;
 	line-height: 22px;
 	font-weight: normal;
-	color: #adadad;
+	color: #EE3B7C;
 	margin-bottom: 0;
 }
 .info > p span {
 	font-size: 15px;
 	line-height: 22px;
 	font-weight: normal;
-	color: #adadad;
+	color: #EE3B7C;
 	width: 94px;
 	display: inline-block;
 }
 .info a {
-	color: #adadad;
+	color: #428bca;
 	text-decoration: none;
 	font-weight: normal;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 .info a:hover {
-	text-decoration: none;
-	color: #eb5368;
+	text-decoration: underline;
+	color: #428bca;
 	-webkit-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
@@ -1412,7 +1415,7 @@ footer {
 }
 .list3 li .info1 {
 	overflow: hidden;
-	margin-top: 46px;
+	margin-top: 40px;
 }
 .box2 figure img {
 	height: 270px;
