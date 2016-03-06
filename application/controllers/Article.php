@@ -27,5 +27,5 @@ class Article extends CI_Controller {
 		$view_data['body'] = 'body/article';
 		$this->load->view('wrapper',$view_data);
 	}
-
+	#asdasdasd
 }
