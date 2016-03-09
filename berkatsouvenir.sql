@@ -1,220 +1,314 @@
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- phpMyAdmin SQL Dump
+-- version 4.5.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost    Database: berkatsouvenir
--- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Host: localhost
+-- Generation Time: Mar 09, 2016 at 12:40 PM
+-- Server version: 5.5.47-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.14
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `berkatsouvenir`
+--
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `article`
 --
 
-DROP TABLE IF EXISTS `article`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `article` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id` int(9) NOT NULL,
   `judul_article` varchar(150) NOT NULL,
   `description` text,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
-  `date_created` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `date_created` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `article`
 --
 
-LOCK TABLES `article` WRITE;
-/*!40000 ALTER TABLE `article` DISABLE KEYS */;
-INSERT INTO `article` VALUES (1,'Article 1','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p><p>Pellentesque sed sapien ornare quam euismod sollicitudin. Donec hendrerit quam in tellus euismod, ut gravida purus suscipit. Etiam sed metus at quam vehicula sodales at et augue. Suspendisse iaculis, lorem sed rutrum consectetur, enim elit convallis libero, sit amet semper nisi est eget magna. Suspendisse eget orci ac arcu porttitor maximus vel sed augue. Nullam vitae malesuada orci. Maecenas non convallis ligula. Vestibulum condimentum facilisis nisl ac ornare. Morbi dictum sodales neque in tincidunt. Praesent ut blandit dolor. Praesent in turpis eget ligula cursus congue. Curabitur tincidunt interdum hendrerit. Curabitur enim turpis, egestas at congue eu, eleifend eget dui. Aenean arcu justo, volutpat vel sapien eget, cursus ullamcorper nulla.</p>',0,'2016-02-16');
-/*!40000 ALTER TABLE `article` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `article` (`id`, `judul_article`, `description`, `deleted`, `date_created`) VALUES
+(1, 'Article 1', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p><p>Pellentesque sed sapien ornare quam euismod sollicitudin. Donec hendrerit quam in tellus euismod, ut gravida purus suscipit. Etiam sed metus at quam vehicula sodales at et augue. Suspendisse iaculis, lorem sed rutrum consectetur, enim elit convallis libero, sit amet semper nisi est eget magna. Suspendisse eget orci ac arcu porttitor maximus vel sed augue. Nullam vitae malesuada orci. Maecenas non convallis ligula. Vestibulum condimentum facilisis nisl ac ornare. Morbi dictum sodales neque in tincidunt. Praesent ut blandit dolor. Praesent in turpis eget ligula cursus congue. Curabitur tincidunt interdum hendrerit. Curabitur enim turpis, egestas at congue eu, eleifend eget dui. Aenean arcu justo, volutpat vel sapien eget, cursus ullamcorper nulla.</p>', 0, '2016-02-16');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id` int(9) NOT NULL,
   `nama_category` varchar(100) NOT NULL,
-  `deleted` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `deleted` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `category`
 --
 
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Gelas',1),(2,'Gantungan Kunci',0),(3,'Piring',0),(4,'Payung',0),(5,'Mug',0);
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `category` (`id`, `nama_category`, `deleted`) VALUES
+(1, 'Gelas', 1),
+(2, 'Gantungan Kunci', 0),
+(3, 'Piring', 0),
+(4, 'Payung', 0),
+(5, 'Mug', 0);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `ci_sessions`
 --
 
-DROP TABLE IF EXISTS `ci_sessions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ci_sessions` (
   `id` varchar(40) NOT NULL,
   `ip_address` varchar(45) NOT NULL,
-  `timestamp` int(10) unsigned NOT NULL DEFAULT '0',
-  `data` blob NOT NULL,
-  KEY `ci_sessions_timestamp` (`timestamp`)
+  `timestamp` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `data` blob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `ci_sessions`
 --
 
-LOCK TABLES `ci_sessions` WRITE;
-/*!40000 ALTER TABLE `ci_sessions` DISABLE KEYS */;
-INSERT INTO `ci_sessions` VALUES ('3981899f05c574a2c70c9d13c8bc57cf1e00f886','::1',1455618889,'__ci_last_regenerate|i:1455618640;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:17:\"manajemen_product\";main_sub_breadcrumb|s:14:\"tambah_product\";'),('76a87e6913cc1fb53172e80a0aab5ca2e4baf658','::1',1455619073,'__ci_last_regenerate|i:1455619045;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:17:\"manajemen_product\";main_sub_breadcrumb|s:14:\"tambah_product\";'),('7ab3cbcdebf8747baba3dcebfdae4e841758647f','::1',1455629793,'__ci_last_regenerate|i:1455629516;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:17:\"manajemen_product\";main_sub_breadcrumb|s:16:\"perbarui_product\";'),('a174d9d1816fb75732501c156a654cae3ead7cb4','::1',1455629959,'__ci_last_regenerate|i:1455629900;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:7:\"article\";main_sub_breadcrumb|s:14:\"daftar_article\";'),('8aefa0b803cb6d223eed5039db19bda9b60e6e59','::1',1455630785,'__ci_last_regenerate|i:1455630557;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:7:\"article\";main_sub_breadcrumb|s:14:\"tambah_article\";'),('45d9299124c52813a24a4b82a5e32331c0b44da2','::1',1455631178,'__ci_last_regenerate|i:1455630911;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:7:\"article\";main_sub_breadcrumb|s:14:\"daftar_article\";'),('576fc19de6373255d0ee0890910614e9b541e5e1','::1',1455631553,'__ci_last_regenerate|i:1455631256;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:11:\"testimonial\";main_sub_breadcrumb|s:18:\"daftar_testimonial\";'),('4a42ab603fa1d29e02de94e56f6b3f0494cddd88','::1',1455631871,'__ci_last_regenerate|i:1455631633;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:11:\"testimonial\";main_sub_breadcrumb|s:18:\"daftar_testimonial\";'),('ec01758134577da7c41b8c99f7f68ffb865d4533','::1',1455632279,'__ci_last_regenerate|i:1455632072;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:11:\"testimonial\";main_sub_breadcrumb|s:18:\"daftar_testimonial\";'),('afb466b456f8598e529c76fae7cfdb1ce7ab9c51','::1',1455632443,'__ci_last_regenerate|i:1455632408;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:11:\"testimonial\";main_sub_breadcrumb|s:18:\"daftar_testimonial\";'),('f2a43fedfe91e9072ce23a8bfadad5856f197863','::1',1455779935,'__ci_last_regenerate|i:1455779935;'),('d081962f160257c05e0ecb1c500a0bb7698241a3','::1',1455787995,'__ci_last_regenerate|i:1455787749;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:17:\"manajemen_product\";main_sub_breadcrumb|s:16:\"perbarui_product\";'),('0f85475b430331019364410dd560cb7d67457b5d','::1',1455788147,'__ci_last_regenerate|i:1455788144;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:17:\"manajemen_product\";main_sub_breadcrumb|s:16:\"perbarui_product\";'),('dde4dba2c654b9c1c9b461aa102d4a015a25d012','::1',1455792499,'__ci_last_regenerate|i:1455792224;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:17:\"manajemen_product\";main_sub_breadcrumb|s:16:\"perbarui_product\";'),('f1cb05f23fbc3336ef764bcfc0a029d50ebd6c83','::1',1455802261,'__ci_last_regenerate|i:1455801986;'),('35638bc148538b748fa6e1f49c043fc72aadf753','::1',1455802417,'__ci_last_regenerate|i:1455802417;'),('e58919a3c6540ea79a7dcdc238e3d88c4f0f9005','::1',1455802953,'__ci_last_regenerate|i:1455802952;'),('2de85e9b6321fa620f0a506d07ce304e5f93b9a1','::1',1455803238,'__ci_last_regenerate|i:1455802954;'),('30f8909aba2caa6aede96644f0efa331b89c8575','::1',1455803569,'__ci_last_regenerate|i:1455803382;'),('6164e5dcdc9dd6a98ace2fb5e1161c50adbfc6f9','::1',1455804039,'__ci_last_regenerate|i:1455803762;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:8:\"category\";main_sub_breadcrumb|s:15:\"daftar_category\";'),('e50ab82e46ab8634fbbe2c37e9a66afbb656b1c8','::1',1455804243,'__ci_last_regenerate|i:1455804071;user_data|a:6:{s:2:\"id\";s:1:\"1\";s:4:\"nama\";s:14:\"Julius Cesario\";s:8:\"username\";s:5:\"admin\";s:8:\"password\";s:32:\"21232f297a57a5a743894a0e4a801fc3\";s:5:\"email\";s:24:\"lixus.julius17@gmail.com\";s:7:\"no_telp\";s:12:\"081288540387\";}breadcrumb|s:8:\"category\";main_sub_breadcrumb|s:15:\"daftar_category\";'),('ac2aeaad7dccce5654613f2160341962d176d458','::1',1455865844,'__ci_last_regenerate|i:1455865844;'),('5a9f6a4a1d1b3ae2dc9e83905a0afd3f8d8e9610','::1',1455865844,'__ci_last_regenerate|i:1455865844;'),('d1db1293ed177b194eb6a29f1d7c1a3a313c95a6','::1',1455869585,'__ci_last_regenerate|i:1455869585;'),('f6b6cad63d896f3a083d6bb384655f2c01d2930c','::1',1456059728,'__ci_last_regenerate|i:1456059588;'),('1afc21c8f0d3e2de066329e1b11697de4392100e','::1',1456060032,'__ci_last_regenerate|i:1456059985;'),('10f594cc65d081e4c93745be09e038eafe3cca1b','::1',1456061474,'__ci_last_regenerate|i:1456061219;'),('bba8687326bf97db14e7e0931d36c98ad5e52820','::1',1456061823,'__ci_last_regenerate|i:1456061573;'),('02b28f0e85976110622669d72bcce39e34022372','::1',1456062172,'__ci_last_regenerate|i:1456061906;'),('22669c951583a0c6d4e389c7516217e6151b8afc','::1',1456062452,'__ci_last_regenerate|i:1456062213;'),('490714306b09867615243b80f5ce1a1368e65486','::1',1456063048,'__ci_last_regenerate|i:1456062753;'),('e2cd9c5f3cc388b3269aa85e1efa59a78fa90fd2','::1',1456063325,'__ci_last_regenerate|i:1456063075;'),('a001789e4ee03729c44413b32bd96e94346be0c3','::1',1456063674,'__ci_last_regenerate|i:1456063460;'),('5423511fcf5efe3b50ed12ab84343eb6bfdff108','::1',1456126974,'__ci_last_regenerate|i:1456126697;');
-/*!40000 ALTER TABLE `ci_sessions` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
+('3981899f05c574a2c70c9d13c8bc57cf1e00f886', '::1', 1455618889, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353631383634303b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31343a2274616d6261685f70726f64756374223b),
+('76a87e6913cc1fb53172e80a0aab5ca2e4baf658', '::1', 1455619073, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353631393034353b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31343a2274616d6261685f70726f64756374223b),
+('7ab3cbcdebf8747baba3dcebfdae4e841758647f', '::1', 1455629793, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353632393531363b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31363a2270657262617275695f70726f64756374223b),
+('a174d9d1816fb75732501c156a654cae3ead7cb4', '::1', 1455629959, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353632393930303b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a373a2261727469636c65223b6d61696e5f7375625f62726561646372756d627c733a31343a226461667461725f61727469636c65223b),
+('8aefa0b803cb6d223eed5039db19bda9b60e6e59', '::1', 1455630785, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353633303535373b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a373a2261727469636c65223b6d61696e5f7375625f62726561646372756d627c733a31343a2274616d6261685f61727469636c65223b),
+('45d9299124c52813a24a4b82a5e32331c0b44da2', '::1', 1455631178, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353633303931313b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a373a2261727469636c65223b6d61696e5f7375625f62726561646372756d627c733a31343a226461667461725f61727469636c65223b),
+('576fc19de6373255d0ee0890910614e9b541e5e1', '::1', 1455631553, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353633313235363b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31313a2274657374696d6f6e69616c223b6d61696e5f7375625f62726561646372756d627c733a31383a226461667461725f74657374696d6f6e69616c223b),
+('4a42ab603fa1d29e02de94e56f6b3f0494cddd88', '::1', 1455631871, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353633313633333b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31313a2274657374696d6f6e69616c223b6d61696e5f7375625f62726561646372756d627c733a31383a226461667461725f74657374696d6f6e69616c223b),
+('ec01758134577da7c41b8c99f7f68ffb865d4533', '::1', 1455632279, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353633323037323b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31313a2274657374696d6f6e69616c223b6d61696e5f7375625f62726561646372756d627c733a31383a226461667461725f74657374696d6f6e69616c223b),
+('afb466b456f8598e529c76fae7cfdb1ce7ab9c51', '::1', 1455632443, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353633323430383b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31313a2274657374696d6f6e69616c223b6d61696e5f7375625f62726561646372756d627c733a31383a226461667461725f74657374696d6f6e69616c223b),
+('f2a43fedfe91e9072ce23a8bfadad5856f197863', '::1', 1455779935, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353737393933353b),
+('d081962f160257c05e0ecb1c500a0bb7698241a3', '::1', 1455787995, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353738373734393b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31363a2270657262617275695f70726f64756374223b),
+('0f85475b430331019364410dd560cb7d67457b5d', '::1', 1455788147, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353738383134343b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31363a2270657262617275695f70726f64756374223b),
+('dde4dba2c654b9c1c9b461aa102d4a015a25d012', '::1', 1455792499, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353739323232343b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31363a2270657262617275695f70726f64756374223b),
+('f1cb05f23fbc3336ef764bcfc0a029d50ebd6c83', '::1', 1455802261, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830313938363b),
+('35638bc148538b748fa6e1f49c043fc72aadf753', '::1', 1455802417, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830323431373b),
+('e58919a3c6540ea79a7dcdc238e3d88c4f0f9005', '::1', 1455802953, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830323935323b),
+('2de85e9b6321fa620f0a506d07ce304e5f93b9a1', '::1', 1455803238, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830323935343b),
+('30f8909aba2caa6aede96644f0efa331b89c8575', '::1', 1455803569, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830333338323b),
+('6164e5dcdc9dd6a98ace2fb5e1161c50adbfc6f9', '::1', 1455804039, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830333736323b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a383a2263617465676f7279223b6d61696e5f7375625f62726561646372756d627c733a31353a226461667461725f63617465676f7279223b),
+('e50ab82e46ab8634fbbe2c37e9a66afbb656b1c8', '::1', 1455804243, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353830343037313b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a383a2263617465676f7279223b6d61696e5f7375625f62726561646372756d627c733a31353a226461667461725f63617465676f7279223b),
+('ac2aeaad7dccce5654613f2160341962d176d458', '::1', 1455865844, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353836353834343b),
+('5a9f6a4a1d1b3ae2dc9e83905a0afd3f8d8e9610', '::1', 1455865844, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353836353834343b),
+('d1db1293ed177b194eb6a29f1d7c1a3a313c95a6', '::1', 1455869585, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435353836393538353b),
+('f6b6cad63d896f3a083d6bb384655f2c01d2930c', '::1', 1456059728, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363035393538383b),
+('1afc21c8f0d3e2de066329e1b11697de4392100e', '::1', 1456060032, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363035393938353b),
+('10f594cc65d081e4c93745be09e038eafe3cca1b', '::1', 1456061474, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036313231393b),
+('bba8687326bf97db14e7e0931d36c98ad5e52820', '::1', 1456061823, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036313537333b),
+('02b28f0e85976110622669d72bcce39e34022372', '::1', 1456062172, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036313930363b),
+('22669c951583a0c6d4e389c7516217e6151b8afc', '::1', 1456062452, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036323231333b),
+('490714306b09867615243b80f5ce1a1368e65486', '::1', 1456063048, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036323735333b),
+('e2cd9c5f3cc388b3269aa85e1efa59a78fa90fd2', '::1', 1456063325, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036333037353b),
+('a001789e4ee03729c44413b32bd96e94346be0c3', '::1', 1456063674, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363036333436303b),
+('5423511fcf5efe3b50ed12ab84343eb6bfdff108', '::1', 1456126974, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435363132363639373b),
+('e59e598010944f424b0f4d4c9f221903c16ed6ce', '127.0.0.1', 1457244568, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373234343536333b),
+('deff170fbb140e85df1d75d42de67658c42ed95a', '127.0.0.1', 1457495526, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439353532363b),
+('3a5dc9b9cd198569aaee99ef9dfa0194a24afadc', '127.0.0.1', 1457495562, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439353536323b),
+('0ddf826322cbbdd78004f9130b7f61d8f3e128a9', '127.0.0.1', 1457495876, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439353837363b),
+('0a22be6e5a4875208259f680bf3eebe26f821d93', '127.0.0.1', 1457495907, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439353930373b),
+('7233ffb341093ecf682796b7e1733253a1e4a829', '127.0.0.1', 1457496588, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439363538353b),
+('7efb56fc3e3b8615eee74b9d3851a4b6e4251853', '127.0.0.1', 1457496619, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439363631393b),
+('164f9d509b381a9b2a489738eaaa2dc0ce97571f', '127.0.0.1', 1457497894, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439373838343b),
+('1089abc4716f2857185bf92ae706245b9376653f', '127.0.0.1', 1457497891, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439373839313b),
+('d0b1466996bb5ca6d256f72a5e6e95641013c3c7', '127.0.0.1', 1457498856, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439383639313b),
+('48998159ce23f1adfabbcfef0dd6ca959b100703', '127.0.0.1', 1457498851, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439383639353b),
+('89b204d8b426b2032b7f95f1b2773288dbdbf1b6', '127.0.0.1', 1457499693, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439393435383b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31363a2270657262617275695f70726f64756374223b),
+('fa73d1bb800a9784d50848c473c1dcb9a004c318', '127.0.0.1', 1457500008, 0x5f5f63695f6c6173745f726567656e65726174657c693a313435373439393830313b757365725f646174617c613a363a7b733a323a226964223b733a313a2231223b733a343a226e616d61223b733a31343a224a756c697573204365736172696f223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a383a2270617373776f7264223b733a33323a223231323332663239376135376135613734333839346130653461383031666333223b733a353a22656d61696c223b733a32343a226c697875732e6a756c697573313740676d61696c2e636f6d223b733a373a226e6f5f74656c70223b733a31323a22303831323838353430333837223b7d62726561646372756d627c733a31373a226d616e616a656d656e5f70726f64756374223b6d61696e5f7375625f62726561646372756d627c733a31363a2270657262617275695f70726f64756374223b);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `product`
 --
 
-DROP TABLE IF EXISTS `product`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id` int(9) NOT NULL,
   `nama_product` varchar(150) NOT NULL,
   `nama_category` varchar(150) NOT NULL,
   `product_image` text,
   `product_image2` text,
+  `product_image3` text,
+  `product_image4` text,
   `description` text,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
-  `promo` tinyint(4) DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `promo` tinyint(4) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product`
 --
 
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Gelas A1','Gelas','includes/assets/gelas_a1.jpg','includes/assets/gelas_a1image2.jpg','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p>',0,1),(2,'Gelas a9','Gelas','includes/assets/gelas_a9.jpg','includes/assets/gelas_a9image2.jpg','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse commodo semper maximus. Nulla vestibulum nisl a luctus rutrum. Sed et fermentum est. Nam pellentesque consectetur turp Sed sodales eget lacus at faucibus. Fusce quis porttitor metus.</p><ol><li>ASD</li><li>Ini Coba</li></ol><p>Aliquam at mi lacus. Nulla luctus nisi consequat nisi dictum, vel lacinia velit volutpat. Cras pulvinar nibh eget libero laoreet cursus. Donec rutrum sed nisl at mattis. Etiam tincidunt odio eu ante bibendum tempus.<strong> Duis molestie est ac urna tincidunt, in luctus nunc tristique. Proin dui justo, finibus sed augue ac, congue tempor nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ut fermentum orci.</strong></p>',0,1);
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `product` (`id`, `nama_product`, `nama_category`, `product_image`, `product_image2`, `product_image3`, `product_image4`, `description`, `deleted`, `promo`) VALUES
+(1, 'Gelas A1', 'Gantungan Kunci', 'includes/assets/gelas_a1.png', 'includes/assets/gelas_a1image2.jpg', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p>', 0, 1),
+(2, 'Gelas a9', 'Gelas', 'includes/assets/gelas_a9.jpg', 'includes/assets/gelas_a9image2.jpg', NULL, NULL, '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse commodo semper maximus. Nulla vestibulum nisl a luctus rutrum. Sed et fermentum est. Nam pellentesque consectetur turp Sed sodales eget lacus at faucibus. Fusce quis porttitor metus.</p><ol><li>ASD</li><li>Ini Coba</li></ol><p>Aliquam at mi lacus. Nulla luctus nisi consequat nisi dictum, vel lacinia velit volutpat. Cras pulvinar nibh eget libero laoreet cursus. Donec rutrum sed nisl at mattis. Etiam tincidunt odio eu ante bibendum tempus.<strong> Duis molestie est ac urna tincidunt, in luctus nunc tristique. Proin dui justo, finibus sed augue ac, congue tempor nisi. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer ut fermentum orci.</strong></p>', 0, 1);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `seo`
 --
 
-DROP TABLE IF EXISTS `seo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `seo` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id` int(9) NOT NULL,
   `seo_title` varchar(150) NOT NULL,
   `seo_keywords` varchar(150) NOT NULL,
   `seo_description` varchar(150) NOT NULL,
   `seo_author` varchar(150) NOT NULL,
   `seo_page` tinyint(4) NOT NULL,
-  `id_seo_page` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `id_seo_page` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `seo`
 --
 
-LOCK TABLES `seo` WRITE;
-/*!40000 ALTER TABLE `seo` DISABLE KEYS */;
-INSERT INTO `seo` VALUES (1,'Gelas A1','Gelas, Berkat','Gelas A1','Julius',1,1),(2,'','','','',2,1),(3,'','','','',3,1),(4,'','','','',3,2),(5,'Gelas a9','Gelas, Berkat, Murah, Pernikahan','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse commodo semper maximus. Nulla vestibulum nisl a luctus rutrum. Sed et fermentum e','Vina',1,2);
-/*!40000 ALTER TABLE `seo` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `seo` (`id`, `seo_title`, `seo_keywords`, `seo_description`, `seo_author`, `seo_page`, `id_seo_page`) VALUES
+(1, 'Gelas A1', 'Gelas, Berkat', 'Gelas A1', 'Julius', 1, 1),
+(2, '', '', '', '', 2, 1),
+(3, '', '', '', '', 3, 1),
+(4, '', '', '', '', 3, 2),
+(5, 'Gelas a9', 'Gelas, Berkat, Murah, Pernikahan', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse commodo semper maximus. Nulla vestibulum nisl a luctus rutrum. Sed et fermentum e', 'Vina', 1, 2);
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `testimonial`
 --
 
-DROP TABLE IF EXISTS `testimonial`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `testimonial` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id` int(9) NOT NULL,
   `judul_testimonial` varchar(150) NOT NULL,
   `testimonial_image` text,
   `description` text,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',
-  `date_created` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `date_created` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `testimonial`
 --
 
-LOCK TABLES `testimonial` WRITE;
-/*!40000 ALTER TABLE `testimonial` DISABLE KEYS */;
-INSERT INTO `testimonial` VALUES (1,'Testi Wedding a & B','includes/assets/testimonial/testi_wedding_a__b.jpg','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p><p>Pellentesque sed sapien ornare quam euismod sollicitudin. Donec hendrerit quam in tellus euismod, ut gravida purus suscipit. Etiam sed metus at quam vehicula sodales at et augue. Suspendisse iaculis, lorem sed rutrum consectetur, enim elit convallis libero, sit amet semper nisi est eget magna. Suspendisse eget orci ac arcu porttitor maximus vel sed augue. Nullam vitae malesuada orci. Maecenas non convallis ligula. Vestibulum condimentum facilisis nisl ac ornare. Morbi dictum sodales neque in tincidunt. Praesent ut blandit dolor. Praesent in turpis eget ligula cursus congue. <strong>Curabitur tincidunt interdum hendrerit.</strong> Curabitur enim turpis, egestas at congue eu, eleifend eget dui. Aenean arcu justo, volutpat vel sapien eget, cursus ullamcorper nulla.</p>',0,'2016-02-16'),(2,'Testi Wedding C & D','includes/assets/testimonial/testi_wedding_c__d.jpg','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p><p>Pellentesque sed sapien ornare quam euismod sollicitudin. Donec hendrerit quam in tellus euismod, ut gravida purus suscipit. Etiam sed metus at quam vehicula sodales at et augue. Suspendisse iaculis, lorem sed rutrum consectetur, enim elit convallis libero, sit amet semper nisi est eget magna. Suspendisse eget orci ac arcu porttitor maximus vel sed augue. Nullam vitae malesuada orci. Maecenas non convallis ligula. Vestibulum condimentum facilisis nisl ac ornare. Morbi dictum sodales neque in tincidunt. Praesent ut blandit dolor. Praesent in turpis eget ligula cursus congue. Curabitur tincidunt interdum hendrerit. Curabitur enim turpis, egestas at congue eu, eleifend eget dui. Aenean arcu justo, volutpat vel sapien eget, cursus ullamcorper nulla.</p>',0,'2016-02-16');
-/*!40000 ALTER TABLE `testimonial` ENABLE KEYS */;
-UNLOCK TABLES;
+INSERT INTO `testimonial` (`id`, `judul_testimonial`, `testimonial_image`, `description`, `deleted`, `date_created`) VALUES
+(1, 'Testi Wedding a & B', 'includes/assets/testimonial/testi_wedding_a__b.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p><p>Pellentesque sed sapien ornare quam euismod sollicitudin. Donec hendrerit quam in tellus euismod, ut gravida purus suscipit. Etiam sed metus at quam vehicula sodales at et augue. Suspendisse iaculis, lorem sed rutrum consectetur, enim elit convallis libero, sit amet semper nisi est eget magna. Suspendisse eget orci ac arcu porttitor maximus vel sed augue. Nullam vitae malesuada orci. Maecenas non convallis ligula. Vestibulum condimentum facilisis nisl ac ornare. Morbi dictum sodales neque in tincidunt. Praesent ut blandit dolor. Praesent in turpis eget ligula cursus congue. <strong>Curabitur tincidunt interdum hendrerit.</strong> Curabitur enim turpis, egestas at congue eu, eleifend eget dui. Aenean arcu justo, volutpat vel sapien eget, cursus ullamcorper nulla.</p>', 0, '2016-02-16'),
+(2, 'Testi Wedding C & D', 'includes/assets/testimonial/testi_wedding_c__d.jpg', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vehicula accumsan nulla, sit amet rutrum risus pretium vel. Nullam eleifend arcu sollicitudin bibendum imperdiet. Vestibulum id gravida metus. Suspendisse faucibus rhoncus nunc, at cursus ex feugiat at. Suspendisse potenti. Pellentesque placerat ut arcu quis semper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus libero nec dolor pretium, non molestie lorem dignissim. Etiam egestas arcu ut rutrum posuere.</p><p>Pellentesque sed sapien ornare quam euismod sollicitudin. Donec hendrerit quam in tellus euismod, ut gravida purus suscipit. Etiam sed metus at quam vehicula sodales at et augue. Suspendisse iaculis, lorem sed rutrum consectetur, enim elit convallis libero, sit amet semper nisi est eget magna. Suspendisse eget orci ac arcu porttitor maximus vel sed augue. Nullam vitae malesuada orci. Maecenas non convallis ligula. Vestibulum condimentum facilisis nisl ac ornare. Morbi dictum sodales neque in tincidunt. Praesent ut blandit dolor. Praesent in turpis eget ligula cursus congue. Curabitur tincidunt interdum hendrerit. Curabitur enim turpis, egestas at congue eu, eleifend eget dui. Aenean arcu justo, volutpat vel sapien eget, cursus ullamcorper nulla.</p>', 0, '2016-02-16');
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(9) NOT NULL AUTO_INCREMENT,
+  `id` int(9) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `no_telp` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  `no_telp` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Julius Cesario','admin','21232f297a57a5a743894a0e4a801fc3','lixus.julius17@gmail.com','081288540387');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+INSERT INTO `users` (`id`, `nama`, `username`, `password`, `email`, `no_telp`) VALUES
+(1, 'Julius Cesario', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'lixus.julius17@gmail.com', '081288540387');
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `article`
+--
+ALTER TABLE `article`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ci_sessions`
+--
+ALTER TABLE `ci_sessions`
+  ADD KEY `ci_sessions_timestamp` (`timestamp`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `seo`
+--
+ALTER TABLE `seo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `article`
+--
+ALTER TABLE `article`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `seo`
+--
+ALTER TABLE `seo`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `testimonial`
+--
+ALTER TABLE `testimonial`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2016-02-23 12:44:49
