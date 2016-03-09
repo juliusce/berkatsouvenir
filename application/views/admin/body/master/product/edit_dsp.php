@@ -48,6 +48,18 @@
               </div>
 
               <div class="form-group">
+                <label for="product_image3">Image Produk 3</label>
+                <a href="<?=base_url()?><?=$data['product_image3']?>" target="_blank">Lihat Gambar 2</a>
+                <input type="file" name="product_image3" id="product_image3" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label for="product_image4">Image Produk 4</label>
+                <a href="<?=base_url()?><?=$data['product_image4']?>" target="_blank">Lihat Gambar 2</a>
+                <input type="file" name="product_image4" id="product_image4" class="form-control" />
+              </div>
+
+              <div class="form-group">
                 <label for="description">Deskripsi Product</label>
                 <textarea name="description" id="description" placeholder="Tulis Deskripsi Produk anda" class="form-control"><?=$data['description']?></textarea>
               </div>

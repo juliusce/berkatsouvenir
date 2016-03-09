@@ -53,38 +53,38 @@
     <ul class="sidebar-menu">
       <li class="header">Menu Utama</li>
       <li class="<?php if($bc == 'dashboard'){?>active<?php }?>">
-        <a href="<?= base_url()?>dashboard">
+        <a href="<?= base_url()?>admin/dashboard">
           <i class="fa fa-laptop"></i>
           <span>DASHBOARD</span>
         </a>
       </li>
 
-      <!-- SLIDER MANAGEMENT -->
+      <!-- SLIDER MANAGEMENT
       <li class="<?php if(!empty($bc)&&$bc == 'manajemen_slider'){?>active<?php }?> treeview">
         <a href="#"><i class="fa fa-edit"></i> HOME SLIDER<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
           <li class="<?php if(!empty($msbc)&&$msbc == 'tambah_slider'){?>active<?php }?>"><a href="<?= base_url()?>admin/slider/insert"><i class="fa fa-plus-square "></i> BUAT SLIDER</a></li>
           <li class="<?php if(!empty($msbc)&&$msbc == 'daftar_slider'){?>active<?php }?>"><a href="<?= base_url()?>admin/slider"><i class="fa fa-list"></i> DAFTAR SLIDER</a></li>
         </ul>
-      </li>
+      </li>-->
 
 
       <!-- PRODUCT MANAGEMENT -->
       <li class="<?php if(!empty($bc)&&$bc == 'manajemen_product'){?>active<?php }?> treeview">
         <a href="#"><i class="fa fa-user"></i> MANAJEMEN PRODUK<i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li class="<?php if(!empty($msbc)&&$msbc == 'category'){?>active<?php }?>">
+          <li>
             <a><i class="fa fa-user"></i> CATEGORY</a>
             <ul class="treeview-menu">
-              <li><a href="<?= base_url()?>Admin/Category"><i class="fa  fa-list "></i> DAFTAR CATEGORY</a></li>
-              <li><a href="<?= base_url()?>Admin/Category/Tambah"><i class="fa fa-plus-square"></i> TAMBAH CATEGORY</a></li>
+              <li class="<?php if(!empty($msbc)&&$msbc == 'category'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Category"><i class="fa fa-list "></i> DAFTAR CATEGORY</a></li>
+              <li class="<?php if(!empty($msbc)&&$msbc == 'category'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Category/Tambah"><i class="fa fa-plus-square"></i> TAMBAH CATEGORY</a></li>
             </ul>
           </li>
-          <li class="<?php if(!empty($msbc)&&$msbc == 'product'){?>active<?php }?>">
+          <li>
             <a><i class="fa fa-user"></i> PRODUCT</a>
             <ul class="treeview-menu">
-              <li><a href="<?= base_url()?>Admin/Product"><i class="fa  fa-list "></i> DAFTAR PRODUCT</a></li>
-              <li><a href="<?= base_url()?>Admin/Product/Tambah"><i class="fa fa-plus-square"></i> TAMBAH PRODUCT</a></li>
+              <li class="<?php if(!empty($msbc)&&$msbc == 'product'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Product"><i class="fa  fa-list "></i> DAFTAR PRODUCT</a></li>
+              <li class="<?php if(!empty($msbc)&&$msbc == 'product'){?>active<?php }?>"><a href="<?= base_url()?>Admin/Product/Tambah"><i class="fa fa-plus-square"></i> TAMBAH PRODUCT</a></li>
             </ul>
           </li>
         </ul>

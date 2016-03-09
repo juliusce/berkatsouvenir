@@ -45,6 +45,16 @@
               </div>
 
               <div class="form-group">
+                <label for="product_image3">Image Produk 3</label>
+                <input type="file" name="product_image3" id="product_image3" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label for="product_image4">Image Produk 4</label>
+                <input type="file" name="product_image4" id="product_image4" class="form-control" />
+              </div>
+
+              <div class="form-group">
                 <label for="description">Deskripsi Product</label>
                 <textarea name="description" id="description" placeholder="Tulis Deskripsi Produk anda" class="form-control"></textarea>
               </div>

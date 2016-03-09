@@ -128,6 +128,40 @@ class Product extends CI_Controller {
             $post['product_image2'] = 'includes/assets/'.$fileName2.'.'.$ext2;
           }
         }
+        //CHECK FILE IMAGE THIRD
+        $filename3 = $_FILES['product_image3']['name'];
+        if(!empty($filename3)){
+          $ext3 = pathinfo($filename3, PATHINFO_EXTENSION);
+          //FOR FILE NAME
+          $fileName3 = str_replace(' ','_',strtolower($post['nama_product'])).'image3';
+          //FOR UPLOAD
+          $config['file_name'] = $fileName3;
+          $this->upload->initialize($config);
+
+          if(!$this->upload->do_upload('product_image3')){
+            $error = $this->upload->display_errors();
+            echo $error; exit;
+          }else{
+            $post['product_image3'] = 'includes/assets/'.$fileName3.'.'.$ext3;
+          }
+        }
+        //CHECK FILE IMAGE FOURTH
+        $filename4 = $_FILES['product_image4']['name'];
+        if(!empty($filename4)){
+          $ext4 = pathinfo($filename4, PATHINFO_EXTENSION);
+          //FOR FILE NAME
+          $fileName4 = str_replace(' ','_',strtolower($post['nama_product'])).'image4';
+          //FOR UPLOAD
+          $config['file_name'] = $fileName4;
+          $this->upload->initialize($config);
+
+          if(!$this->upload->do_upload('product_image4')){
+            $error = $this->upload->display_errors();
+            echo $error; exit;
+          }else{
+            $post['product_image4'] = 'includes/assets/'.$fileName4.'.'.$ext4;
+          }
+        }
         $id = $this->Model_Transaction->Insert_To_Db($post,TABLE);
         if(!empty($id)){
           $post_seo['seo_page'] = 1;

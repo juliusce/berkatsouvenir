@@ -48,32 +48,26 @@
 <body>
 <!--==============================header=================================-->
 
-<header id="header" style="position:relative">
-      <div class="container">
-        <h1 class="navbar-brand navbar-brand_"><a href="<?=base_url()?>"><img style="margin-bottom:-1%" alt="Grill point" src="<?=base_url()?>includes/logo.png"></a></h1>
-      </div>
-        <img id="imageTest" src="<?=base_url()?>includes/renda.png" style="    max-width: 6163px;
-    max-height: 100%;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 96%;
-    z-index:30" />
-      <div class="menuheader">
-          <div class="container">
-            <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
-                <ul class="nav sf-menu" style="list-style-type: none;">
-                  <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>">HOME</a></li>
-                  <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>category">PRODUCT</a></li>
-                  <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>article">ARTICLES</a></li>
-                  <li <?php if($title == 'Testimonial'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>testimonial">TESTIMONIALS</a></li>
-                  <li <?php if($title == 'Contact'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>contact">CONTACT</a></li>
-                </ul>
-            </nav>
-          </div>
-      </div>
+<header id="header" style="position:relative; display:block">
+    <div class="container">
+      <h1 class="navbar-brand navbar-brand_"><a href="<?=base_url()?>"><img style="margin-bottom:-1%" alt="Grill point" src="<?=base_url()?>includes/logo.png"></a></h1>
+    </div>
+    <img id="imageTest" src="<?=base_url()?>includes/renda.png" style="max-width: 6163px;
+      max-height: 100%; bottom: 0; left: 0; margin: auto; position: absolute; right: 0; bottom: -18%; z-index:30; display:block"
+    />
+    <div class="menuheader">
+        <div class="container">
+          <nav class="navbar navbar-default navbar-static-top tm_navbar" role="navigation">
+              <ul class="nav sf-menu" style="list-style-type: none;">
+                <li <?php if($title == 'Home'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>">HOME</a></li>
+                <li <?php if($title == 'Product'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>category">PRODUCT</a></li>
+                <li <?php if($title == 'Article'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>article">ARTICLES</a></li>
+                <li <?php if($title == 'Testimonial'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>testimonial">TESTIMONIALS</a></li>
+                <li <?php if($title == 'Contact'){?>class="active"<?php } ?>><a style="font-size:120%" href="<?=base_url()?>contact">CONTACT</a></li>
+              </ul>
+          </nav>
+        </div>
+    </div>
 </header>
 <?php $this->load->view($body); ?>
 <!--==============================footer=================================-->
